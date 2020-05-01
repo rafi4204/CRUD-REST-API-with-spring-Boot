@@ -1,13 +1,16 @@
-package model;
+package com.example.friends.model;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "friend")
 public class Friend {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "firstname")
     String firstName;
+    @Column(name = "lastname")
     String lastName;
 
     public Friend() {
@@ -25,7 +28,7 @@ public class Friend {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -33,7 +36,7 @@ public class Friend {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -41,7 +44,7 @@ public class Friend {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {

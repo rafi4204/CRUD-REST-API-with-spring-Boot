@@ -33,5 +33,10 @@ public class FriendsController {
         friendsService.delete(friend);
     }
 
+    @GetMapping("/friend/search")
+    Friend showByLastName(@RequestParam(value = "lastname") String lastName) {
+        return friendsService.findByLastName(lastName);
+    }
+
 
 }

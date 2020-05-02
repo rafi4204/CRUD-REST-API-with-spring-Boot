@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Component
 public interface FriendsService extends CrudRepository<Friend,Integer> {
+
+    Friend findByLastName(String lastName);
 }
